@@ -1,0 +1,56 @@
+body {
+    background-color:darkslategray;
+}
+
+#addToDoBlock {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: whitesmoke;
+    width: 500px;
+    margin: 70px auto;
+    border-radius: 10px;
+    padding: 50px;
+    height: auto;
+}
+
+
+
+#toDoCreateForm {
+    text-align: center;
+}
+
+#toDoField {
+    width: 375px;
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+#toDoField:focus-visible {
+    outline: none;
+}
+
+#toDoAdd {
+    width: 12%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    background-color: #8b5ec6;
+    vertical-align: middle;
+}
+
+#todoList{
+    list-style-type: none;
+}
+
+#todoItem{
+
+}
