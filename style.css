@@ -19,6 +19,18 @@ body {
     text-align: center;
 }
 
+#toDoCreateForm li {
+    background: #fff;
+    padding: 10px;
+    margin: 10px 4px 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    width: 93%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 #toDoField {
     width: 375px;
     border-radius: 10px;
@@ -47,8 +59,23 @@ body {
     vertical-align: middle;
 }
 
-#todoList{
+#todoUl{
     list-style-type: none;
+}
+
+#todoUl form {
+    text-align: left;
+}
+
+#todoUl input {
+    border: none;
+    border-bottom: 1px solid;
+    float: left;
+    width: 58%;
+    font-size: 18px;
+}
+#todoUl input:focus-visible{
+    outline: none;
 }
 
 #todoItem{
