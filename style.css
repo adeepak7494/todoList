@@ -66,7 +66,7 @@ placeholder-input ::placeholder {
 }
 
 #searchMenu {
-    width: 85%;
+    width: 100%;
     margin-top: 20px;
     height: 25px;
     border-radius: 5px;
@@ -129,6 +129,7 @@ placeholder-input ::placeholder {
     width: 85%;
     height: 100%;
     border-radius: 10px;
+    margin-left: 20px;
 }
 
 #toDoCreateForm {
