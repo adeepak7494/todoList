@@ -2,52 +2,159 @@ body {
     background-color:white;
     display: flex;
     width: 90vw;
-    height: 90vh;
+    height: 97vh;
+    font-family: serif;
 }
+
+h6,h4{
+    margin: 5px;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+}
+
 
 /* Solid border */
 hr.solid {
-    border-top: 2px solid #bbb;
+    border-top: 0.8px solid #FAFAFA;
     width: 200px;
     text-align: left;
     margin-left: 0;
 }
 
+hr.taskDivider {
+    border-top: 0.8px solid #FAFAFA;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+}
+
+.expand-task-button {
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+
+.fa-solid {
+    color: grey !important;
+}
+
+#menuHandle {
+    font-size: 25px;
+}
+
+#sideBar-header {
+    width: 85%;
+    margin-bottom:30px;
+}
+
 #sidebar {
-    width: 30%;
+    width: 15%;
     height: 100%;
+    border-radius: 10px;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    color: rgb(3,3,3);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px 0 0 20px;
+    background-color: #FAFAFA;
+}
+
+placeholder-input ::placeholder {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
+
+#searchMenu {
+    width: 85%;
+    margin-top: 20px;
+    height: 25px;
+    border-radius: 5px;
+    border: 2.3px solid #FAFAFA;
+    opacity: 0.8;
+    background: white;
+    box-shadow: 2px 2px 2px 2px #FAFAFA;
+}
+
+#searchMenu:focus-visible {
+    outline: none;
+}
+
+
+#sideBar-tasks-menu ul{
+    list-style: none;
+    line-height: 2.5;
+    padding-left: 10px;
+    padding-top: 2px;
+    margin: 0;
+}
+
+#sideBar-tasks-menu ul.nav li.selected {
+    background-color:#FAFAFA;
+   }
+
+#sideBar-tasks-menu span{
+   margin-left: 10px;
+}
+
+#sidebar-lists-menu button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    vertical-align: middle;
+    color: grey;
+
+}
+
+#sidebar-tags-menu button {
+    background-color: #EBEBEB;
+    border: none;
+    font-size: 15px;
+    border-radius: 9px;
+    padding: 9px;
+    width: 92px;
+    height: 37px;
+    font-weight: normal;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    cursor: pointer;
+    vertical-align: middle;
 }
   
 #addToDoBlock {
-    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
-    width: 70%;
+    width: 85%;
     height: 100%;
     border-radius: 10px;
 }
 
-
-
 #toDoCreateForm {
-    text-align: center;
+    padding-left: 25px;
+    border: 1.5px solid #FAFAFA;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px #FAFAFA;
 }
 
 #toDoCreateForm button {
     border: none;
     background: none;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 400;
     cursor: pointer;
     vertical-align: middle;
+    color: grey;
+
 }
 
+
 #toDoField {
-    width: 375px;
-    border-radius: 10px;
+    width: 95%;
+    border-radius: 0px;
     height: 40px;
     border: none;
-    background: #fff;
     font-size: 15px;
     vertical-align: middle;
 }
@@ -57,25 +164,15 @@ hr.solid {
 }
 
 
-#todoUl{
-    list-style-type: none;
+#todoList {
+    list-style: none;
+    line-height: 1.5;
+    padding-left: 10px;
+    padding-top: 20px;
+    margin: 0;
 }
 
-#todoUl form {
-    text-align: left;
-}
 
-#todoUl input {
-    border: none;
-    border-bottom: 1px solid;
-    float: left;
-    width: 58%;
-    font-size: 18px;
-}
-#todoUl input:focus-visible{
-    outline: none;
-}
-
-#todoItem{
-
+#toDoItem button{
+    float: right;
 }

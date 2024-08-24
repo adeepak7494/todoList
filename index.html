@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style.css" type='text/css'>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lexend Deca">
     <script src="https://kit.fontawesome.com/6960672d2b.js" crossorigin="anonymous"></script>
     <script src="./script.js" type="text/javascript"></script>
     <title>
@@ -15,28 +17,27 @@
 <body>
     <div id="sidebar">
         <div id="sideBar-header">
-            <h4>Todos</h4>
-            <span>
-                <i class="fa-solid fa-bars"></i>
-            </span>
-            <span>
-                <search>
-                    <input name="searchMenu" id="searchMenu" placeholder="Search">
-                </search>
-            </span>
+            <div style="display: flex;justify-content: space-between;">
+                <h4>Todos</h4>
+                <span id="menuHandle">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </div>
+           
+        <input name="searchMenu" id="searchMenu" class="placeholder-input" placeholder="Search">
         </div>
         <div id="sideBar-tasks-menu">
-            <h5 style="text-transform:uppercase;">Tasks</h5>
-            <ul style="list-style: none;">
-                <li><i class="fa-duotone fa-solid fa-forward"></i>Upcoming</li>
-                <li><i class="fa-duotone fa-solid fa-list"></i>Today</li>
-                <li><i class="fa-duotone fa-regular fa-calendar"></i>Calendar</li>
-                <li><i class="fa-duotone fa-regular fa-note-sticky"></i>Sticky Wall</li>
+            <h6 style="text-transform:uppercase;">Tasks</h6>
+            <ul>
+                <li><i class="fa-duotone fa-solid fa-forward"></i><span>Upcoming</span></li>
+                <li><i class="fa-duotone fa-solid fa-list"></i><span>Today</span></li>
+                <li><i class="fa-duotone fa-regular fa-calendar"></i><span>Calendar</span></li>
+                <li><i class="fa-duotone fa-regular fa-note-sticky"></i><span>Sticky Wall</span></li>
             </ul>
         </div>
         <hr class="solid">
-        <div id="sideBar-lists-menu">
-            <h5 style="text-transform:uppercase;">Lists</h5>
+        <div id="sidebar-lists-menu">
+            <h6 style="text-transform:uppercase;">Lists</h6>
             <ul style="list-style: none;">
 
             </ul>
@@ -44,23 +45,21 @@
             <label>Add New List</label>
 
         </div>
-        <div id="sideBar-tags-menu">
-            <h5 style="text-transform:uppercase;">Tags</h5>
+        <hr class="solid">
+        <div id="sidebar-tags-menu">
+            <h6 style="text-transform:uppercase;">Tags</h6>
             <ul style="list-style: none;">
-
             </ul>
             <button type="submit" name="submit" value="+" onclick="addTodo()">+ Add Tag</button>
         </div>
     </div>
     <div id="addToDoBlock">
-        <h1>To Do List</h1>
-        <div id="toDoCreateForm">
+        <h1>Today</h1>
+        <form id="toDoCreateForm">
             <button type="submit" onclick="addTodo()">+
-            </button>
-            
-            <input id="toDoField" type="text" placeholder="Add another item!">
-            
-        </div>
+            </button>            
+            <input id="toDoField"  type="text" placeholder="Add new task" minlength="4" required>            
+        </form>
         <ul id="todoList">
 
         </ul>
