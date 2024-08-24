@@ -57,8 +57,23 @@ hr.solid {
 }
 
 
-#todoList{
+#todoUl{
     list-style-type: none;
+}
+
+#todoUl form {
+    text-align: left;
+}
+
+#todoUl input {
+    border: none;
+    border-bottom: 1px solid;
+    float: left;
+    width: 58%;
+    font-size: 18px;
+}
+#todoUl input:focus-visible{
+    outline: none;
 }
 
 #todoItem{
