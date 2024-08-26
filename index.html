@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -61,6 +61,26 @@
             <input id="toDoField"  type="text" placeholder="Add new task" minlength="4" required>            
         </form>
         <ul id="todoList">
+
+        </ul>
+    </div>
+    <div id="taskDetailBlock"> 
+        <div style="display: flex;justify-content: space-between;">
+            <h4 style="text-transform:capitalize;">Task:</h4>
+            <span style="vertical-align: middle;text-align: center;">
+                <i class="fa-duotone fa-solid fa-close" style="font-size: 20px;margin-right: 10px;"></i>
+            </span>
+        </div>       
+        <input id="taskTitleField"  type="text" placeholder="Title" minlength="4" required>
+        <textarea id="taskDescription"  type="text" placeholder="Description" minlength="4" required></textarea>
+        <div id="selectList">
+            <label>List</label>    
+            <select id="listOptions"></select>
+        </div>
+        <div id="tagButtons">
+            <label>Tags</label>              
+        </div>
+        <ul id="subTasksList">
 
         </ul>
     </div>

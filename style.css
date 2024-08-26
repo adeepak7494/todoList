@@ -1,14 +1,20 @@
 body {
     background-color:white;
     display: flex;
-    width: 90vw;
-    height: 97vh;
-    font-family: serif;
+    width: 99vw;
+    height: 96vh;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    
 }
+
+input,textarea::-webkit-input-placeholder { 
+    font-family: "Lexend Deca", sans-serif;
+}
+
 
 h6,h4{
     margin: 5px;
-    font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -48,11 +54,9 @@ hr.taskDivider {
 }
 
 #sidebar {
-    width: 15%;
+    width: 20%;
     height: 100%;
     border-radius: 10px;
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
     color: rgb(3,3,3);
     font-size: 16px;
     line-height: 24px;
@@ -60,15 +64,10 @@ hr.taskDivider {
     background-color: #FAFAFA;
 }
 
-placeholder-input ::placeholder {
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
-}
-
 #searchMenu {
     width: 100%;
     margin-top: 20px;
-    height: 25px;
+    height: 40px;
     border-radius: 5px;
     border: 2.3px solid #FAFAFA;
     opacity: 0.8;
@@ -124,12 +123,12 @@ placeholder-input ::placeholder {
 }
   
 #addToDoBlock {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
-    width: 85%;
+    width: 80%;
     height: 100%;
     border-radius: 10px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 #toDoCreateForm {
@@ -176,4 +175,43 @@ placeholder-input ::placeholder {
 
 #toDoItem button{
     float: right;
+}
+
+#taskDetailBlock {
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+    color: rgb(3,3,3);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 20px 0 0 20px;
+    background-color: #FAFAFA;
+}
+
+#taskTitleField {
+    width: 95%;
+    border-radius: 0px;
+    height: 40px;
+    border: none;
+    margin-top:20px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+#taskTitleField:focus-visible {
+    outline: none;
+}
+
+#taskDescription {
+    margin-top: 20px;
+    width: 95%;
+    border-radius: 0px;
+    height: 80px;
+    border: none;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+#taskDescription:focus-visible {
+    outline: none;
 }
