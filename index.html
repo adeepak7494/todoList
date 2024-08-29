@@ -18,14 +18,17 @@
     <div id="sidebar">
         <div id="sideBar-header">
             <div style="display: flex;justify-content: space-between;">
-                <h4>Todos</h4>
-                <span id="menuHandle">
-                    <i class="fa-solid fa-bars"></i>
+                <span id="appTitle">
+                    <h4>Todos</h4>
+                </span>
+                <span id="menuHandle" onclick="openSideNav()">
+                    <i class="fa-solid fa-bars" style="cursor: pointer;"></i>
                 </span>
             </div>
-           
-        <input name="searchMenu" id="searchMenu" class="placeholder-input" placeholder="Search">
         </div>
+        <div>
+            <input name="searchMenu" id="searchMenu" class="placeholder-input" placeholder="Search">
+        </div>        
         <div id="sideBar-tasks-menu">
             <h6 style="text-transform:uppercase;">Tasks</h6>
             <ul>
@@ -35,17 +38,29 @@
                 <li><i class="fa-duotone fa-regular fa-note-sticky"></i><span>Sticky Wall</span></li>
             </ul>
         </div>
-        <hr class="solid">
+        <div>
+            <hr class="solid">
+        </div>
         <div id="sidebar-lists-menu">
             <h6 style="text-transform:uppercase;">Lists</h6>
-            <ul style="list-style: none;">
+            <ul  style="list-style: none;">
 
             </ul>
-            <button type="submit" name="submit" onclick="addTodo()">+</button>
-            <label>Add New List</label>
+            <div>
+                <button type="submit" name="submit" onclick="addTodo()">+</button>
+                <label>Add New List</label>
+            </div>
+            <div >
+                <button type="submit"><input type="color" id="colorpicker" name="favcolor" value="#ff0000">
+                </button>      
+                <input id="newListField"  type="text" placeholder="Enter list name" minlength="4" required>   
+            </div>
+
 
         </div>
-        <hr class="solid">
+        <div>
+            <hr class="solid">
+        </div>
         <div id="sidebar-tags-menu">
             <h6 style="text-transform:uppercase;">Tags</h6>
             <ul style="list-style: none;">
@@ -64,7 +79,7 @@
 
         </ul>
     </div>
-    <div id="taskDetailBlock"> 
+    <div id="taskDetailBlock" class="is-show"> 
         <div style="display: flex;justify-content: space-between;">
             <h4 style="text-transform:capitalize;">Task:</h4>
             <span style="vertical-align: middle;text-align: center;">
