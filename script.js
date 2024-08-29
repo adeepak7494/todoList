@@ -49,6 +49,6 @@ function openSideNav() {
 
 function expandTask(clickedId) {
 console.log(clickedId)
-document.querySelector("#taskDetailBlock").classlist.toggle('is-show');
+document.querySelector("#taskDetailBlock").style.visibility = "visible"
 }
 
