@@ -48,7 +48,31 @@ function openSideNav() {
 }
 
 function expandTask(clickedId) {
-console.log(clickedId)
-document.querySelector("#taskDetailBlock").style.visibility = "visible"
+  console.log(clickedId);
+  const taskDetail = document.getElementById(clickedId).parentNode;
+  console.log(taskDetail.children, taskDetail.childNodes);
+  document.getElementById("taskTitleField").nodeValue = taskDetail.childNodes[1].textContent
+  const taskDetailBlock  = document.getElementById("taskDetailBlock");
+  taskDetailBlock.style.width = "40%";
+  taskDetailBlock.style.height = "100%"
+  taskDetailBlock.classList.remove("show-none");
+  taskDetailBlock.classList.add("showMore");
+  document.getElementById("addToDoBlock").style.width = "60%";
+  document.getElementById("sidebar").style.width = "25%";
 }
+
+
+
+function closeTaskDetail(clickedId) {
+  const taskDetailBlock  = document.getElementById("taskDetailBlock");
+  taskDetailBlock.style.width = "0";
+  taskDetailBlock.style.height = "0";
+  taskDetailBlock.classList.remove("showMore");
+  taskDetailBlock.classList.add("show-none");
+  document.getElementById("addToDoBlock").style.width = "80%";
+  document.getElementById("sidebar").style.width = "20%";
+}
+
+
+
 

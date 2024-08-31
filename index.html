@@ -79,11 +79,11 @@
 
         </ul>
     </div>
-    <div id="taskDetailBlock" class="is-show"> 
+    <div id="taskDetailBlock" class="show-none"> 
         <div style="display: flex;justify-content: space-between;">
             <h4 style="text-transform:capitalize;">Task:</h4>
-            <span style="vertical-align: middle;text-align: center;">
-                <i class="fa-duotone fa-solid fa-close" style="font-size: 20px;margin-right: 10px;"></i>
+            <span style="vertical-align: middle;text-align: center;"  onclick="closeTaskDetail()">
+                <i class="fa-duotone fa-solid fa-close" style="font-size: 20px;margin-right: 10px; cursor: pointer;"></i>
             </span>
         </div>       
         <input id="taskTitleField"  type="text" placeholder="Title" minlength="4" required>
