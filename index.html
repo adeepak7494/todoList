@@ -43,17 +43,17 @@
         </div>
         <div id="sidebar-lists-menu">
             <h6 style="text-transform:uppercase;">Lists</h6>
-            <ul  style="list-style: none;">
+            <ul id="lists">
 
             </ul>
             <div>
-                <button type="submit" name="submit" onclick="addTodo()">+</button>
+                <button class="addlistbutton" type="submit" name="submit" onclick="addNewListItem()">+</button>
                 <label>Add New List</label>
             </div>
-            <div >
-                <button type="submit"><input type="color" id="colorpicker" name="favcolor" value="#ff0000">
+            <div id="listFieldInput" class="show-none" >
+                <button class="colorpickerbutton" type="submit"><input type="color" id="colorpicker" name="favcolor" value="#ff0000">
                 </button>      
-                <input id="newListField"  type="text" placeholder="Enter list name" minlength="4" required>   
+                <input id="newListField"  type="text" placeholder="Enter list name" minlength="4" onkeypress="addListItem(event)" required>   
             </div>
 
 
@@ -87,7 +87,7 @@
             </span>
         </div>       
         <input id="taskTitleField"  type="text" placeholder="Title" minlength="4" required>
-        <textarea id="taskDescription"  type="text" placeholder="Description" minlength="4" required></textarea>
+        <textarea id="taskDescription"  type="text" placeholder="Description" minlength="4" onchange="changeDescription()" required></textarea>
         <div id="selectList">
             <label>List</label>    
             <select id="listOptions"></select>

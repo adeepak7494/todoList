@@ -1,5 +1,9 @@
 let toDoItemsList = [];
+let lists = [];
 let todoItem = 0;
+let listIndex = 0;
+let currentTaskIndex = 0;
+
 
 function addTodo() {
   let toDoText = document.querySelector("#toDoField");
@@ -21,8 +25,8 @@ function addTodo() {
 
 function openSideNav() {
   let sideBar = document.querySelector('#sidebar');
-  if(sideBar.style.width == "20%" || sideBar.style.width == "") {
-    sideBar.style.width = "5%";
+  if(sideBar.style.width == "15%" || sideBar.style.width == "") {
+    sideBar.style.width = "3%";
     document.getElementById('appTitle').style.display = "none";
     let Nodelist = sideBar.children;
     for(let i =1; i< Nodelist.length; i++) {
@@ -34,7 +38,7 @@ function openSideNav() {
     }
     
   } else {
-    sideBar.style.width = "20%"
+    sideBar.style.width = "15%"
     document.getElementById('appTitle').style.display = "";
     let Nodelist = sideBar.children;
     for(let i =1; i< Nodelist.length; i++) {
@@ -47,11 +51,19 @@ function openSideNav() {
   }
 }
 
+function changeDescription() {
+  const taskDescription =  document.getElementById("taskDescription").value;
+   toDoItemsList[Number(currentTaskIndex)].description = taskDescription;
+}
+
 function expandTask(clickedId) {
   console.log(clickedId);
+  const index = clickedId.split("-")[1];
+  currentTaskIndex = index;
   const taskDetail = document.getElementById(clickedId).parentNode;
   console.log(taskDetail.children, taskDetail.childNodes);
-  document.getElementById("taskTitleField").nodeValue = taskDetail.childNodes[1].textContent
+  document.getElementById("taskTitleField").value = toDoItemsList[Number(index)].title;
+  document.getElementById("taskDescription").value = toDoItemsList[Number(currentTaskIndex)].description;
   const taskDetailBlock  = document.getElementById("taskDetailBlock");
   taskDetailBlock.style.width = "40%";
   taskDetailBlock.style.height = "100%"
@@ -62,7 +74,6 @@ function expandTask(clickedId) {
 }
 
 
-
 function closeTaskDetail(clickedId) {
   const taskDetailBlock  = document.getElementById("taskDetailBlock");
   taskDetailBlock.style.width = "0";
@@ -71,8 +82,42 @@ function closeTaskDetail(clickedId) {
   taskDetailBlock.classList.add("show-none");
   document.getElementById("addToDoBlock").style.width = "80%";
   document.getElementById("sidebar").style.width = "20%";
+  currentTaskIndex = 0;
 }
 
+function addListItem(event) {
+  if(event.key === "Enter") {
+    const item = document.getElementById("newListField");
+    const colour =  document.getElementById("colorpicker").value;
+     if(item.value !== "") {
+      lists.push({listName : item.value, colour : colour});
+      document.getElementById(
+        "lists"
+      ).innerHTML += `<li id="listItem">
+        <div style="display: flex;justify-content: space-between;">
+        <span>
+        <button class="list-item-button" style="background-color: ${colour};" id="listitem-${listIndex}-button">
+       </button>
+       <label>${lists[listIndex].listName}</label>
+        </span>
+        <span>
+        <button class="list-counter-button" style="background-color: #FAFAFA;" id="listcounter-${listIndex}-button">
+       </button>
+        </span>
+        </div>
+       
+        </li>`;
+        item.value = "";
+        listIndex += 1;
+        document.querySelector("#listFieldInput").classList.remove("showMore");
+        document.querySelector("#listFieldInput").classList.add("show-none");
+    }
+  }
+}
 
+function addNewListItem() {
+  document.querySelector("#listFieldInput").classList.remove("show-none");
+  document.querySelector("#listFieldInput").classList.add("showMore");
+}
 
 

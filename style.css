@@ -22,7 +22,7 @@ h6,h4{
 /* Solid border */
 hr.solid {
     border-top: 0.8px solid #FAFAFA;
-    width: 200px;
+    width: 90%;
     text-align: left;
     margin-left: 0;
 }
@@ -93,10 +93,10 @@ hr.taskDivider {
     overflow-y: auto;
 }
 
-#sideBar-lists-menu ul{
+#lists{
     list-style: none;
     line-height: 2.5;
-    padding-left: 10px;
+    padding-left: 7px;
     padding-top: 2px;
     margin: 0;
     max-height:250px;
@@ -111,7 +111,7 @@ hr.taskDivider {
    margin-left: 10px;
 }
 
-#sidebar-lists-menu button {
+.addlistbutton,.colorpickerbutton {
     border: none;
     background: none;
     font-size: 20px;
@@ -121,6 +121,14 @@ hr.taskDivider {
     color: grey;
 
 }
+
+#sidebar-lists-menu .list-item-button {
+    height: 13px;
+    margin-right: 5px;
+    border: none;
+    width: 13px;
+}
+
 
 
 #colorpicker {
