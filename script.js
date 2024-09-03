@@ -1,8 +1,32 @@
 let toDoItemsList = [];
-let lists = [];
+let lists = localStorage.getItem("lists") ? JSON.parse(localStorage.getItem("lists")) : [] ;
 let todoItem = 0;
 let listIndex = 0;
 let currentTaskIndex = 0;
+window.onload = function(){
+  if(lists.length > 0) {
+    for(let i = 0; i < lists.length; i++) {
+      document.getElementById(
+        "lists"
+      ).innerHTML += `<li id="listItem">
+        <div style="display: flex;justify-content: space-between;">
+        <span>
+        <button class="list-item-button" style="background-color: ${lists[i].colour};" id="listitem-${i}-button">
+       </button>
+       <label>${lists[i].listName}</label>
+        </span>
+        <span>
+        <button class="list-counter-button" style="background-color: #FAFAFA;" id="listcounter-${i}-button">0
+       </button>
+        </span>
+        </div>
+       
+        </li>`;
+        listIndex++;
+    }
+  }
+  
+};
 
 
 function addTodo() {
@@ -60,8 +84,6 @@ function expandTask(clickedId) {
   console.log(clickedId);
   const index = clickedId.split("-")[1];
   currentTaskIndex = index;
-  const taskDetail = document.getElementById(clickedId).parentNode;
-  console.log(taskDetail.children, taskDetail.childNodes);
   document.getElementById("taskTitleField").value = toDoItemsList[Number(index)].title;
   document.getElementById("taskDescription").value = toDoItemsList[Number(currentTaskIndex)].description;
   const taskDetailBlock  = document.getElementById("taskDetailBlock");
@@ -71,6 +93,13 @@ function expandTask(clickedId) {
   taskDetailBlock.classList.add("showMore");
   document.getElementById("addToDoBlock").style.width = "60%";
   document.getElementById("sidebar").style.width = "25%";
+  for(let i = 0; i < lists.length ; i++) {
+    var daySelect = document.getElementById("listOptions");
+    var myOption = document.createElement("option");
+    myOption.text = lists[i].listName;
+    myOption.value = i;
+    daySelect.add(myOption);
+  }
 }
 
 
@@ -91,6 +120,7 @@ function addListItem(event) {
     const colour =  document.getElementById("colorpicker").value;
      if(item.value !== "") {
       lists.push({listName : item.value, colour : colour});
+      localStorage.setItem("lists", JSON.stringify(lists));
       document.getElementById(
         "lists"
       ).innerHTML += `<li id="listItem">
@@ -101,7 +131,7 @@ function addListItem(event) {
        <label>${lists[listIndex].listName}</label>
         </span>
         <span>
-        <button class="list-counter-button" style="background-color: #FAFAFA;" id="listcounter-${listIndex}-button">
+        <button class="list-counter-button" style="background-color: #FAFAFA;" id="listcounter-${listIndex}-button">0
        </button>
         </span>
         </div>
